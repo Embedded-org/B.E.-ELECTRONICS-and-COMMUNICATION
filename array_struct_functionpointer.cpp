@@ -18,13 +18,12 @@ int(*intadd)(int,int)=add;
 int(*intmultiply)(int,int)=multiply;
 int (*p[2])(int,int)={add,multiply};
 
-struct st 
+typedef struct
 {
 int(*intadd)(int,int);
 int(*intmultiply)(int,int);
-
-};
-st ptr1={add,multiply};
+}funcptr;
+funcptr ptr1={add,multiply};
 
 
 int main()
