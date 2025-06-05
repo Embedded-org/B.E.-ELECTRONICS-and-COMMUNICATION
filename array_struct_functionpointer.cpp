@@ -38,3 +38,28 @@ cout<<"multiply int array"<<p[1](60,70)<<endl;
 
 return(0);
 }
+
+/*
+creating prog executable Without static linking:
+gcc -c ./src/main.c -I./include
+gcc -c ./src/mymath1.c -I./include
+gcc -c ./src/mymath2.c -I./include
+gcc main.o mymath1.o mymath2.o -o prog
+./prog
+
+
+creating prog executable With static linking:
+
+ar rcs mymath.a mymath1.o mymath2.o
+gcc main.o mymath.a -o prog
+./prog
+
+
+creating prog executable With Dynamic linking:
+gcc -fPIC -shared ./src/mymath1.c ./src/mymath2.c -I./include
+mv mymath1.so libmymath1.so
+mv mymath1.so lib mymath2.so
+gcc ./src/main.c -o prog -I./include -lmymath1 -lmymath2 -L ./ LD_LIBRARY_PATH="./"
+./prog
+
+*/
