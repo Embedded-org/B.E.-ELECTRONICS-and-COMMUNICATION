@@ -62,4 +62,16 @@ mv mymath1.so lib mymath2.so
 gcc ./src/main.c -o prog -I./include -lmymath1 -lmymath2 -L ./ LD_LIBRARY_PATH="./"
 ./prog
 
+
+
+final execultable saving intermediate files and then Place the output into <main>.
+gcc -save-temps -c main.cpp -o main
+
+Preprocess only; do not compile, assemble or link.
+gcc  -E main.cpp >main.ii
+Compile only; do not assemble or link.
+gcc  -S main.cpp >main.ss
+Compile and assemble, but do not link.
+gcc  -c  main.cpp 
+
 */
